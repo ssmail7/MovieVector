@@ -1,4 +1,4 @@
-//***************************************************************
+//****************************************************************
 // Written by Steven Smail for COP3331
 //
 // Movie.cpp (Project 2)
@@ -7,7 +7,7 @@
 // is then stored in a vector. When the user has indicated that
 // they are done entering movie data, the program outputs the
 // information stored in the vector.
-//***************************************************************
+//****************************************************************
 
 #include <iostream>
 #include <vector>
@@ -27,11 +27,18 @@ void print(vector <Movie> a, int size);
 int main ()
 {
   char ch;
-  int count{0};  Movie temp;                // Create a temp structure  vector <Movie> newMovies;  // Create a vector for new movies
+  int count{0};
+  Movie temp;                // Create a temp structure
+  vector <Movie> newMovies;  // Create a vector for new movies
 
-  Movie *moviePnt = &temp;  do
+  Movie *moviePnt = &temp;
+
+  do
   {
-    movieMaker(moviePnt);    // Insert it into the vector    newMovies.push_back(temp);
+    movieMaker(moviePnt);
+
+    // Insert it into the vector
+    newMovies.push_back(temp);
     // Count the number of vector entries
     count++;
 
@@ -49,13 +56,16 @@ int main ()
 void movieMaker(struct Movie *p)
 {
   // Get the movie information
-  // Get the movie title  cout << "\nEnter the title of the movie: ";
+  // Get the movie title
+  cout << "\nEnter the title of the movie: ";
   getline(cin, p->title);
 
-  // Get the director's name  cout << "Enter the director's name: ";
+  // Get the director's name
+  cout << "Enter the director's name: ";
   getline(cin, p->director);
 
-  // Get the release year  cout << "Enter the year the movie was created: ";
+  // Get the release year
+  cout << "Enter the year the movie was created: ";
   cin >> p->year;
 
   // Get the length
